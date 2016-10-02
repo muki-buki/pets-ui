@@ -7,13 +7,15 @@
     "clean:dist": "rimraf -- dist .awcache",
     "build:dev": "npm run clean:dist && webpack",
     "webdev": "webpack-dev-server",
-    "serve:dev": "npm-run-all -p -r webdev sass:watch",
+    "serve:dev": "npm-run-all -p -r sass:watch webdev",
     "clean:overlaycss": "rimraf -- \"node_modules/@angular/material/core/overlay/overlay.css\" ",
     "sass": "npm run clean:overlaycss && node-sass src -o src --include-path node_modules --output-style compressed -q",
     "sass:watch": "node-sass -w src -o src",
     "lint": "tslint \"./src/**/*.ts\" -c tslint.json -s node_modules/tslint-stylish -t stylish",
     "pretest": "npm run lint && npm run sass",
-    "test": "karma start"
+    "test": "karma start",
+    "prestart": "npm-run-all -p sass lint",
+    "start": "npm-run-all -p -r webdev sass:watch"
   },
   "dependencies": {
     "@angular/common": "^2.0.1",

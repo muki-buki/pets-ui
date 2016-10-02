@@ -1,6 +1,6 @@
 module.exports = function (config) {
   // set to false for continuous mode
-  const runOnce = false;
+  const runOnce = true;
 
   config.set({
 
