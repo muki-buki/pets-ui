@@ -1,10 +1,5 @@
 require('ts-helpers');
-let path = require('path');
-
-function root(args) {
-  args = Array.prototype.slice.call(arguments, 0);
-  return path.join.apply(path, [path.resolve(__dirname)].concat(args));
-}
+const absolutePath = require('./utils').absolutePath
 
 const {
   ContextReplacementPlugin,
@@ -18,13 +13,12 @@ const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const webpackMerge = require('webpack-merge');
 
 let port = 3000;
-console.log(`Starting dev server on port: ${port}`);
+console.log(`Starting dev server on port: ${port}\n`);
 
 const CONSTANTS = {
   ENV: JSON.stringify('dev'),
   HOST: '0.0.0.0',
-  PORT: port,
-  STORE_DEV_TOOLS: JSON.stringify('monitor')
+  PORT: port
 };
 
 module.exports = webpackMerge({
@@ -36,7 +30,7 @@ module.exports = webpackMerge({
   },
 
   output: {
-    path: root('dist/client'),
+    path: absolutePath('dist/client'),
     filename: 'bundle.js'
   },
 
@@ -50,7 +44,7 @@ module.exports = webpackMerge({
   plugins: [
     new ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      root('./src')
+      absolutePath('./src')
     ),
     new ProgressPlugin(),
     new ForkCheckerPlugin(),
@@ -84,10 +78,10 @@ module.exports = webpackMerge({
           'angular2-template-loader',
           'angular2-router-loader?loader=system&genDir=src/compiled/src/app&aot=false'
         ],
-        exclude: [/\.d\.ts$/]
+        exclude: [/\.(spec|e2e|d)\.ts$/]
       },
       {test: /\.json$/, loader: 'json-loader'},
-      {test: /\.html/, loader: 'raw-loader', exclude: [root('./src/index.html')]},
+      {test: /\.html/, loader: 'raw-loader', exclude: [absolutePath('./src/index.html')]},
       {test: /\.css$/, loader: 'raw-loader'}
     ]
   },

@@ -4,7 +4,6 @@ import {MdSidenav} from '@angular/material';
 
 import {views} from './app-views';
 
-
 @Component({
   selector: 'pet-app',
   styleUrls: ['./app.component.css'],

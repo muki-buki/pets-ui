@@ -6,3 +6,5 @@ dist
 .awcache
 
 .idea
+
+coverage
