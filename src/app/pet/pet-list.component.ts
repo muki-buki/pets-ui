@@ -1,6 +1,7 @@
 import {Component, OnInit}  from '@angular/core';
 import {Pet} from './pet';
 import {mockedPetList} from './data/pet-list-data';
+import {PetService} from './pet.service';
 
 @Component({
   selector: 'pet-list',
@@ -9,10 +10,12 @@ import {mockedPetList} from './data/pet-list-data';
 })
 export class PetListComponent implements OnInit {
   pageTitle: string = 'Pet Inventory';
-  // temporary load mocked data
-  pets: Pet[] = mockedPetList;
+  pets: Pet[];
+
+  constructor(private _petService: PetService) {
+  }
 
   ngOnInit(): void {
-    // TODO retrieve the pets through an api
+    this.pets = this._petService.getAllPets();
   }
 }

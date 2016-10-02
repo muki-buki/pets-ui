@@ -5,6 +5,7 @@ import {MaterialModule} from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
 import {routes} from './pets.routing';
 import {PetListComponent} from './pet-list.component';
+import {PetService} from './pet.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import {PetListComponent} from './pet-list.component';
   ],
   declarations: [
     PetListComponent
+  ],
+  providers: [
+    PetService
   ]
 })
 export class PetsModule {
