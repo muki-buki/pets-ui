@@ -9,10 +9,10 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $primary: md-palette($md-blue);
-$accent:  md-palette($md-pink, A200, A100, A400);
+$accent: md-palette($md-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$warn:    md-palette($md-red);
+$warn: md-palette($md-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $theme: md-light-theme($primary, $accent, $warn);
@@ -36,7 +36,8 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-family: $primary-font;
@@ -45,7 +46,8 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   line-height: 1.35;
   letter-spacing: -0.02em;
   opacity: 0.54;
-  font-size: 0.6em; }
+  font-size: 0.6em;
+}
 
 h1 {
   font-family: $primary-font;
@@ -54,7 +56,8 @@ h1 {
   line-height: 1.35;
   letter-spacing: -0.02em;
   margin-top: 24px;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+}
 
 h2 {
   font-family: $primary-font;
@@ -62,7 +65,8 @@ h2 {
   font-weight: 400;
   line-height: 48px;
   margin-top: 24px;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+}
 
 h3 {
   font-family: $primary-font;
@@ -70,7 +74,8 @@ h3 {
   font-weight: 400;
   line-height: 40px;
   margin-top: 24px;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+}
 
 h4 {
   font-family: $primary-font;
@@ -79,7 +84,8 @@ h4 {
   line-height: 32px;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 24px;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+}
 
 h5 {
   font-family: $primary-font;
@@ -88,7 +94,8 @@ h5 {
   line-height: 1;
   letter-spacing: 0.02em;
   margin-top: 24px;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+}
 
 h6 {
   font-family: $primary-font;
@@ -97,17 +104,20 @@ h6 {
   line-height: 24px;
   letter-spacing: 0.04em;
   margin-top: 24px;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+}
 
 p {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+}
 
 a {
-  font-weight: 500; }
+  font-weight: 500;
+}
 
 blockquote {
   font-family: $primary-font;
@@ -116,30 +126,39 @@ blockquote {
   font-weight: 300;
   font-style: italic;
   line-height: 1.35;
-  letter-spacing: 0.08em; }
+  letter-spacing: 0.08em;
+}
+
 blockquote:before {
   position: absolute;
   left: -0.5em;
-  content: '“'; }
+  content: '“';
+}
+
 blockquote:after {
   content: '”';
-  margin-left: -0.05em; }
+  margin-left: -0.05em;
+}
 
 mark {
-  background-color: #f4ff81; }
+  background-color: #f4ff81;
+}
 
 dt {
-  font-weight: 700; }
+  font-weight: 700;
+}
 
 address {
   font-size: 12px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0;
-  font-style: normal; }
+  font-style: normal;
+}
 
 ul, ol {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0; }
+  letter-spacing: 0;
+}

@@ -11,7 +11,7 @@ import {views} from './app-views';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements AfterContentInit {
-  message = 'Hello from the app component';
+  toolbarTitle = 'Pet store for the enthusiats';
   views = views;
   sideNavMode = 'side';
   @ViewChild(MdSidenav) sidenav: MdSidenav;
@@ -27,10 +27,10 @@ export class AppComponent implements AfterContentInit {
   }
 
   activate(event) {
-    console.log('Activate Event:', event);
+    // console.log('Activate Event:', event);
   }
 
   deactivate(event) {
-    console.log('Deactivate Event', event);
+    // console.log('Deactivate Event', event);
   }
 }

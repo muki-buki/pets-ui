@@ -14,7 +14,7 @@
     "lint": "tslint \"./src/**/*.ts\" -c tslint.json -s node_modules/tslint-stylish -t stylish",
     "pretest": "npm run lint && npm run sass",
     "test": "karma start",
-    "prestart": "npm-run-all -p sass lint",
+    "prestart": "npm-run-all sass lint",
     "start": "npm-run-all -p -r webdev sass:watch"
   },
   "dependencies": {
@@ -88,5 +88,10 @@
     "type": "git",
     "url": "TBD"
   },
+
+  "engines": {
+    "node": "6.6.0"
+  },
+
   "license": "ISC"
 }

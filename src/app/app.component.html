@@ -10,6 +10,12 @@
       </template>
     </md-nav-list>
   </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    {{toolbarTitle}}
+  </md-toolbar>
   <md-card id="my-page-card">
     <router-outlet (activate)="activate($event)" (deactivate)="deactivate($event)"></router-outlet>
   </md-card>
