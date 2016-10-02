@@ -11,7 +11,9 @@
     "clean:overlaycss": "rimraf -- \"node_modules/@angular/material/core/overlay/overlay.css\" ",
 
     "sass": "npm run clean:overlaycss && node-sass src -o src --include-path node_modules --output-style compressed -q",
-    "sass:watch": "node-sass -w src -o src"
+    "sass:watch": "node-sass -w src -o src",
+
+    "lint": "tslint \"./src/**/*.ts\" -c tslint.json -s node_modules/tslint-stylish -t stylish"
   },
   "dependencies": {
     "@angular/common": "^2.0.1",
@@ -61,7 +63,12 @@
     "@types/core-js": "~0.9.33",
     "@types/node": "^6.0.41",
 
-    "npm-run-all": "~3.1.0"
+    "npm-run-all": "~3.1.0",
+
+    "tslint": "~3.15.1",
+    "tslint-loader": "~2.1.5",
+    "codelyzer": "~1.0.0-beta.0",
+    "tslint-stylish": "2.1.0-beta"
   },
   "repository": {
     "type": "git",

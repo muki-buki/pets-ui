@@ -1,6 +1,5 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router,} from '@angular/router';
-
+import {Component, ViewEncapsulation} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'pet-app',
@@ -8,11 +7,10 @@ import { ActivatedRoute, Router,} from '@angular/router';
   templateUrl: './app.component.html',
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent{
+export class AppComponent {
   message = 'Hello from the app component';
 
-  constructor(
-    public route: ActivatedRoute,
-    public router: Router
-  ) {}
+  constructor(public route: ActivatedRoute,
+              public router: Router) {
+  }
 }
