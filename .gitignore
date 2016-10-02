@@ -8,4 +8,4 @@ dist
 .idea
 
 coverage
-/src/app/*.component.css
+/src/app/**/*.css
