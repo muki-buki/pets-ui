@@ -6,5 +6,8 @@ module.exports = {
   },
   build: {
     dir: 'dist/client'
+  },
+  testing: {
+    runOnce: true
   }
 };

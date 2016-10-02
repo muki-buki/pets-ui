@@ -1,6 +1,6 @@
 module.exports = function (config) {
   // set to false for continuous mode
-  const runOnce = true;
+  const runOnce = require('config').get('testing.runOnce');
 
   config.set({
 

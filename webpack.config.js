@@ -11,9 +11,12 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const {ForkCheckerPlugin} = require('awesome-typescript-loader');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const webpackMerge = require('webpack-merge');
+const config = require('config');
 
-let port = 3000;
+const port = config.get('app.port');
 console.log(`Starting dev server on port: ${port}\n`);
+
+const outDir = config.get('build.dir');
 
 const CONSTANTS = {
   ENV: JSON.stringify('dev'),
@@ -30,7 +33,7 @@ module.exports = webpackMerge({
   },
 
   output: {
-    path: absolutePath('dist/client'),
+    path: absolutePath(outDir),
     filename: 'bundle.js'
   },
 
