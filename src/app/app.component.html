@@ -1,6 +1,18 @@
-<div>{{message}}</div>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<md-sidenav-layout fullscreen>
+  <md-sidenav #sidenav [mode]="sideNavMode">
+    <md-nav-list>
+      <template ngFor let-view [ngForOf]="views" let-even="even" let-odd="odd" let-rowIndex="index">
+        <a md-list-item [routerLink]="view.link" routerLinkActive="active-link">
+          <md-icon md-list-icon>{{view.icon}}</md-icon>
+          <span md-line>{{view.name}}</span>
+          <span md-line class="secondary">{{view.description}}</span>
+        </a>
+      </template>
+    </md-nav-list>
+  </md-sidenav>
+  <md-card id="my-page-card">
+    <router-outlet (activate)="activate($event)" (deactivate)="deactivate($event)"></router-outlet>
+  </md-card>
+</md-sidenav-layout>
 
 
