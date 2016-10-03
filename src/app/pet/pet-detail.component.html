@@ -1,1 +1,50 @@
-<div>Pet Detail</div>
+<table width="100%">
+  <tr>
+    <td width="5%" valign="middle">
+      <button (click)="onBack()">
+        <md-icon md-list-icon>arrow_back</md-icon>
+      </button>
+    </td>
+    <td width="95%" valign="middle">
+      <h4>{{pet.name}} Details </h4>
+    </td>
+  </tr>
+</table>
+
+<div layout="column" class="md-inline-form">
+
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-input placeholder="pet name" [value]="pet.name" class="full-width"></md-input>
+        </td>
+        <td>
+          <md-input placeholder="category"
+                    [value]="pet.category"
+                    class="full-width">
+          </md-input>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <md-input class="full-width" placeholder="description" [value]="pet.description"></md-input>
+    </p>
+    <table class="full-width" cellspacing="0">
+      <tr>
+        <td>
+          <md-input class="full-width" placeholder="in store since" [value]="pet.since"></md-input>
+        </td>
+        <td>
+          <md-input #price class="full-width"
+                    placeholder="price"
+                    [value]="pet.price">
+          </md-input>
+        </td>
+      </tr>
+    </table>
+    <p align="center">
+      <img md-list-avatar
+           [src]="pet.imageUrl"
+           [alt]="pet.alt">
+    </p>
+</div>
