@@ -9,7 +9,7 @@ import {routes} from '../app.routing';
 
 import 'rxjs/add/operator/takeUntil';
 import {NotFoundComponent} from '../not-found.component';
-import {mockedPetList} from './data/pet-list-data';
+import {mockedPetList} from '../api/pet-list-data';
 
 describe('App Component', () => {
   beforeEach(() => {

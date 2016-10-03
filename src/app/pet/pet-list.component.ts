@@ -11,6 +11,7 @@ export class PetListComponent implements OnInit {
   pageTitle: string = 'Pet Inventory';
   filter: string = 'fifi';
   pets: Pet[];
+  errorMessage: string;
 
   constructor(private _petService: PetService) {
   }
@@ -20,6 +21,10 @@ export class PetListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.pets = this._petService.getAllPets();
+    this._petService
+      .getAllPets()
+      .subscribe(
+        pets => this.pets = pets,
+        error => this.errorMessage = <any>error);
   }
 }

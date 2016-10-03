@@ -7,13 +7,15 @@ import {routes} from './pets.routing';
 import {PetListComponent} from './pet-list.component';
 import {PetService} from './pet.service';
 import {PetFilterPipe} from './pet-filter.pipe';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    HttpModule
   ],
   declarations: [
     PetListComponent,

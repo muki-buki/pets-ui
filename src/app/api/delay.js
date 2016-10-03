@@ -1,0 +1,1 @@
+exports.delay = 600;

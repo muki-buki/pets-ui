@@ -5,7 +5,7 @@ Works in nodejs engines > 6.x.x.
 To get started: 
 ```
   npm install
-  npm start
+  npm run full:dev
 ```
 
 Then go to localhost:3000
@@ -35,4 +35,5 @@ $ du -sh node_modules
 Ouch!
 
 # Next
+
 Stay put! A lot of exciting features are coming (that means also more dependencies ....)
