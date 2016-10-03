@@ -7,7 +7,6 @@ import {AppModule} from './app/app.module';
 import {ApplicationRef} from '@angular/core';
 import {enableDebugTools} from '@angular/platform-browser';
 
-
 export function main(): Promise<any> {
   return platformBrowserDynamic()
     .bootstrapModule(AppModule)

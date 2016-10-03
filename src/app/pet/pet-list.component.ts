@@ -1,6 +1,5 @@
 import {Component, OnInit}  from '@angular/core';
 import {Pet} from './pet';
-import {mockedPetList} from './data/pet-list-data';
 import {PetService} from './pet.service';
 
 @Component({
@@ -10,9 +9,14 @@ import {PetService} from './pet.service';
 })
 export class PetListComponent implements OnInit {
   pageTitle: string = 'Pet Inventory';
+  filter: string = 'fifi';
   pets: Pet[];
 
   constructor(private _petService: PetService) {
+  }
+
+  onKeyPress(event: any): void {
+    this.filter = event.target.value;
   }
 
   ngOnInit(): void {

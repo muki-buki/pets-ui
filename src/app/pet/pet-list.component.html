@@ -1,27 +1,38 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    {{pageTitle}}
-  </div>
+<h4>{{pageTitle}}</h4>
 
-  <div class="panel-body">
-    <div class="row">
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+  <table width="100%">
+    <tr>
+      <td width="5%">
+          <md-icon class="md-left">search</md-icon>
+      </td>
+      <td width="95%">
+        <md-input class="fullWidth" id="filterBy"
+                  name="filterBy"
+                  placeholder="filter"
+                  align="left"
+                  [value]='filter'
+                  (keyup)='onKeyPress($event)'
+                  #filterInput>
 
-      <md-input placeholder="filterBy" align="left">
-      </md-input>
-    </div>
-    <section layout="row">
-      <md-list>
-        <md-list-item *ngFor="let p of pets">
-          <img md-list-avatar
-               [src]="p.imageUrl"
-               [alt]="p.alt">
-          <h3 md-line> {{p.category}} </h3>
-          <p md-line>
-            <span class="primary"> {{p.name}} </span>
-            <span class="secondary"> -- {{p.description}} </span>
-          </p>
-        </md-list-item>
-      </md-list>
-    </section>
-  </div>
-</div>
+          <md-hint align="end">filtered by: {{filterInput.value}}</md-hint>
+        </md-input>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+  <md-list>
+    <md-list-item *ngFor="let p of pets | petFilter:filter">
+      <img md-list-avatar
+           [src]="p.imageUrl"
+           [alt]="p.alt">
+      <h3 md-line> {{p.category}} </h3>
+      <p md-line>
+        <span class="primary"> {{p.name}} </span>
+        <span class="gray"> -- {{p.description}} </span>
+      </p>
+    </md-list-item>
+  </md-list>
+</section>

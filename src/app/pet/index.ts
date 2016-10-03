@@ -6,6 +6,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {routes} from './pets.routing';
 import {PetListComponent} from './pet-list.component';
 import {PetService} from './pet.service';
+import {PetFilterPipe} from './pet-filter.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {PetService} from './pet.service';
     MaterialModule.forRoot()
   ],
   declarations: [
-    PetListComponent
+    PetListComponent,
+    PetFilterPipe
   ],
   providers: [
     PetService
