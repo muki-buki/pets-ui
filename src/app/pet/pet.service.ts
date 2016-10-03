@@ -3,7 +3,7 @@ import {Pet} from './pet';
 // import {Http, Response} from '@angular/http';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-import {getAllMockedPets} from '../api/MockedPetApi';
+import {getAllMockedPets, getMockedPet} from '../api/MockedPetApi';
 
 @Injectable()
 export class PetService {
@@ -20,6 +20,10 @@ export class PetService {
     //   .catch(this.handleError);
 
     return getAllMockedPets();
+  }
+
+  getPet(id: string) {
+    return getMockedPet(id);
   }
 
   // private handleError(error: Response) {

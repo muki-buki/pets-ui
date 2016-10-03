@@ -15,7 +15,7 @@
                   (keyup)='onKeyPress($event)'
                   #filterInput>
 
-          <md-hint align="end">filtered by: {{filterInput.value}}</md-hint>
+          <md-hint *ngIf='filterInput.characterCount > 0' align="end">filtered by: {{filterInput.value}}</md-hint>
         </md-input>
       </td>
     </tr>
@@ -33,6 +33,9 @@
         <span class="primary"> {{p.name}} </span>
         <span class="gray"> -- {{p.description}} </span>
       </p>
+      <a md-list-item [routerLink]="['/pets', p.id]" routerLinkActive="active-link">
+        <md-icon md-list-icon>details</md-icon>
+      </a>
     </md-list-item>
   </md-list>
 </section>

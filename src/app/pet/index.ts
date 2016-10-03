@@ -8,6 +8,7 @@ import {PetListComponent} from './pet-list.component';
 import {PetService} from './pet.service';
 import {PetFilterPipe} from './pet-filter.pipe';
 import {HttpModule} from '@angular/http';
+import {PetDetailComponent} from './pet-detail.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import {HttpModule} from '@angular/http';
   ],
   declarations: [
     PetListComponent,
+    PetDetailComponent,
     PetFilterPipe
   ],
   providers: [
