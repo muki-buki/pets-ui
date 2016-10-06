@@ -5,10 +5,19 @@ Works in nodejs engines > 6.x.x.
 To get started: 
 ```
   npm install
-  npm run full:dev
+  npm start
 ```
 
-Then go to localhost:3000
+This will build the production bundle and launch a local server listening to port 3000:[localhost:3000](http://localhost:3000)
+
+# Development flow
+
+```
+  npm run dev:full
+```
+
+Here we run linting, build sass and bundle with the webpack development config and start the wepack-dev-server.
+The changes to styles or typescript code would be hot loaded in the browser.
 
 # Testing
 
@@ -24,16 +33,24 @@ Since I just did a fresh `npm install` that took a bit longer I checked node_mod
 
 ```
 $ ls node_modules | wc -l
-684
+718
 ```
 
 ```
 $ du -sh node_modules
-198M    node_modules
+208M    node_modules
 ```
 
 Ouch!
 
 # Next
 
-Stay put! A lot of exciting features are coming (that means also more dependencies ....)
+[] Create pet view
+
+[] Connect with the java service (currently the pets are in memory)
+
+[] Authentication
+
+[] Shopping functionality
+
+[] Sold pet deletion by admins
