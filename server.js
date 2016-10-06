@@ -2,12 +2,12 @@ const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const config = require('config');
-const port = config.get('app.port');
+const port = process.env.PORT || config.get('app.port');
 const outDir = config.get('build.dir');
 
 const app = express();
 
-app.use(compression());
+app.use(compression());git
 app.use(express.static(outDir));
 
 app.get('*', (req, res) => {
