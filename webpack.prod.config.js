@@ -1,31 +1,31 @@
 require('ts-helpers');
 const absolutePath = require('./utils').absolutePath;
-
 const {
   ContextReplacementPlugin,
   DefinePlugin,
-  ProgressPlugin
+  ProgressPlugin,
+  NoErrorsPlugin
 } = require('webpack');
 
+const CompressionPlugin = require('compression-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const {ForkCheckerPlugin} = require('awesome-typescript-loader');
+const { ForkCheckerPlugin } = require('awesome-typescript-loader');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+
 const config = require('config');
-
 const port = config.get('app.port');
-console.log(`Starting dev server on port: ${port}\n`);
-
 const outDir = config.get('build.dir');
 
 const CONSTANTS = {
-  ENV: JSON.stringify('dev'),
-  HOST: '0.0.0.0',
+  ENV: JSON.stringify('production'),
+  HOST: JSON.stringify('0.0.0.0'),
   PORT: port
 };
 
 module.exports = {
   cache: true,
-  devtool: 'eval',
+  devtool: 'source-map',
 
   entry: {
     main: './src/main.browser'
@@ -59,7 +59,19 @@ module.exports = {
       from: 'src/index.html',
       to: ''
     }
-    ])
+    ]),
+    new NoErrorsPlugin(),
+    new UglifyJsPlugin({
+      beautify: false,
+      comments: false
+    }),
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'gzip',
+      test: /\.js$|\.html$/,
+      threshold: 10240,
+      minRatio: 0.8
+    })
   ],
   module: {
     rules: [
