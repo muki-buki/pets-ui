@@ -7,7 +7,7 @@ const outDir = config.get('build.dir');
 
 const app = express();
 
-app.use(compression());git
+app.use(compression());
 app.use(express.static(outDir));
 
 app.get('*', (req, res) => {
